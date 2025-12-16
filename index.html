@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Éléments du curseur personnalisé -->
+    <div class="cursor-follower"></div>
+    <div class="cursor-dot"></div>
+
+    <!-- Contenu principal -->
+    <div class="container">
+        <div class="hero">
+            <h1>Anthony EMILE-GUILLOT</h1>
+            <p>Apprenti développeur</p>
+                        
+            <div class="cta-buttons">
+                <a href="autresPages/pageProjets.html" class="btn btn-primary">Voir mes projets</a>
+                <a href="autresPages/contact.html" class="btn">Me contacter</a>
+                <a href="autresPages/pageStages.html" class="btn">Voir mes stages</a>
+                <a href="autresPages/tableauDeSynthese.html" class="btn">Voir mon tableau de synthèse</a>
+            </div>
+        </div>
+        
+        <div class="hero">
+            <h2 class="subtitle">Mes compétences :</h2>
+        </div>  
+        
+        <div class="projects" id="projets">
+            <div class="project-card">
+                <img src="image/logo html.png" alt="Logo HTML" height="230" width="230">
+            </div>
+
+            <div class="project-card">
+                <img src="image/logo css.png" alt="Logo CSS" height="230" width="180">
+            </div>
+
+            <div class="project-card">
+                <img src="image/logo js.png" alt="Logo JavaScript" height="230" width="180">
+            </div>
+
+            <div class="project-card">
+                <img src="image/logo git.png" alt="Logo Git" height="180" width="180">
+            </div>
+            
+            <div class="project-card">
+                <img src="image/logo php.png" alt="Logo PHP" height="180" width="180">
+            </div>
+
+            <div class="project-card">
+                <img src="image/logo java.svg" alt="Logo Java" height="230" width="230">
+            </div>
+
+            <div class="project-card">
+                <img src="image/logo cobol.jpg" alt="Logo COBOL" height="230" width="180">
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // Éléments du curseur
+        const cursorFollower = document.querySelector('.cursor-follower');
+        const cursorDot = document.querySelector('.cursor-dot');
+
+        // Position du curseur
+        let mouseX = 0;
+        let mouseY = 0;
+        let followerX = 0;
+        let followerY = 0;
+
+        // Suivi de la souris
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            
+            // Point central suit immédiatement
+            cursorDot.style.left = mouseX + 'px';
+            cursorDot.style.top = mouseY + 'px';
+        });
+
+        // Animation fluide du curseur follower
+        function animateCursor() {
+            const speed = 0.15;
+            
+            followerX += (mouseX - followerX) * speed;
+            followerY += (mouseY - followerY) * speed;
+            
+            cursorFollower.style.left = followerX + 'px';
+            cursorFollower.style.top = followerY + 'px';
+            
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        // Animation au clic
+        document.addEventListener('mousedown', () => {
+            cursorFollower.classList.add('clicked');
+            cursorDot.classList.add('clicked');
+        });
+
+        document.addEventListener('mouseup', () => {
+            cursorFollower.classList.remove('clicked');
+            cursorDot.classList.remove('clicked');
+        });
+
+        // Animation au survol d'éléments interactifs
+        const interactiveElements = document.querySelectorAll('a, button, .project-card');
+        
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursorFollower.classList.add('hover');
+                cursorDot.classList.add('hover');
+            });
+            
+            el.addEventListener('mouseleave', () => {
+                cursorFollower.classList.remove('hover');
+                cursorDot.classList.remove('hover');
+            });
+        });
+    </script>
+</body>
+</html>

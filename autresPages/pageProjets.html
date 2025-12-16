@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Projets - Anthony EMILE-GUILLOT</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Éléments du curseur personnalisé -->
+    <div class="cursor-follower"></div>
+    <div class="cursor-dot"></div>
+
+    <div class="projets-container">
+        <a href="../index.html" class="back-home">← Retour à l'accueil</a>
+        
+        <div class="projets-header">
+            <h1>Mes Projets</h1>
+        </div>
+
+        <div class="projets-grid">
+            <!-- Projet 1 -->
+            <div class="projet-card" data-category="web">
+                <div class="projet-image">🌐</div>
+                <div class="projet-content">
+                    <span class="projet-category">Scolaire</span>
+                    <h3 class="projet-title">Portfolio Personnel</h3>
+                    <p class="projet-description">
+                        Site portfolio présentant mes compétences et projets.
+                    </p>
+                    <div class="projet-technologies">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <div class="projet-links">
+                        <a href="#" class="projet-link">Voir le projet</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projet 2 -->
+            <div class="projet-card" data-category="web">
+                <div class="projet-image">🌐</div>
+                <div class="projet-content">
+                    <span class="projet-category">Scolaire</span>
+                    <h3 class="projet-title">Site CMS (no-code)</h3>
+                    <p class="projet-description">
+                        Site WordPress personnalisé pour un client.
+                    </p>
+                    <div class="projet-technologies">
+                        <span class="tech-tag">Découverte des CMS</span>
+                    </div>
+                    <div class="projet-links">
+                        <a href="https://sio2026-wp-aegag.sio1-2lerebours.org/wordpress/" class="projet-link">Voir le projet</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projet 3 -->
+            <div class="projet-card" data-category="backend">
+                <div class="projet-image">🌐</div>
+                <div class="projet-content">
+                    <span class="projet-category">Scolaire</span>
+                    <h3 class="projet-title">PockeProjet</h3>
+                    <p class="projet-description">
+                        Un projet qui nous a permis de découvrir les API et de les utiliser via un projet de notre choix.
+                    </p>
+                    <div class="projet-technologies">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <div class="projet-links">
+                        <a href="file:///C:/Users/aemil/Desktop/sio1/PokeProjet/Poke_index.html" class="projet-link">Voir le projet</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projet 4 -->
+            <div class="projet-card" data-category="web">
+                <div class="projet-image">🌐</div>
+                <div class="projet-content">
+                    <span class="projet-category">Scolaire</span>
+                    <h3 class="projet-title">Site Vitrine</h3>
+                    <p class="projet-description">
+                        Création d'un site vitrine pour une entreprise fictive.
+                    </p>
+                    <div class="projet-technologies">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <div class="projet-links">
+                        <a href="file:///C:/Users/aemil/Downloads/anthony.github.io-main/anthony.github.io-main/html%20ap/index.html" class="projet-link">Voir le projet</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projet 5 -->
+            <div class="projet-card" data-category="web">
+                <div class="projet-image">🌐</div>
+                <div class="projet-content">
+                    <span class="projet-category">Scolaire</span>
+                    <h3 class="projet-title">Site Vitrine</h3>
+                    <p class="projet-description">
+                        Création d'un site vitrine pour une entreprise fictive.
+                    </p>
+                    <div class="projet-technologies">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">Symfony</span>
+                    </div>
+                    <div class="projet-links">
+                        <a href="#" class="projet-link">En dévellopement</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Éléments du curseur
+        const cursorFollower = document.querySelector('.cursor-follower');
+        const cursorDot = document.querySelector('.cursor-dot');
+
+        // Position du curseur
+        let mouseX = 0;
+        let mouseY = 0;
+        let followerX = 0;
+        let followerY = 0;
+
+        // Suivi de la souris
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            
+            // Point central suit immédiatement
+            cursorDot.style.left = mouseX + 'px';
+            cursorDot.style.top = mouseY + 'px';
+        });
+
+        // Animation fluide du curseur follower
+        function animateCursor() {
+            const speed = 0.15;
+            
+            followerX += (mouseX - followerX) * speed;
+            followerY += (mouseY - followerY) * speed;
+            
+            cursorFollower.style.left = followerX + 'px';
+            cursorFollower.style.top = followerY + 'px';
+            
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        // Animation au clic
+        document.addEventListener('mousedown', () => {
+            cursorFollower.classList.add('clicked');
+            cursorDot.classList.add('clicked');
+        });
+
+        document.addEventListener('mouseup', () => {
+            cursorFollower.classList.remove('clicked');
+            cursorDot.classList.remove('clicked');
+        });
+
+        // Animation au survol d'éléments interactifs
+        const interactiveElements = document.querySelectorAll('a, button, .project-card');
+        
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursorFollower.classList.add('hover');
+                cursorDot.classList.add('hover');
+            });
+            
+            el.addEventListener('mouseleave', () => {
+                cursorFollower.classList.remove('hover');
+                cursorDot.classList.remove('hover');
+            });
+        });
+    </script>
+</body>
+</html>
