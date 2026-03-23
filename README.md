@@ -27,7 +27,7 @@ Ce portfolio web présente :
 
 ```
 PortFolio_AEG/
-├── index.html                      # Page d'accueil
+├── index.html                     # Page d'accueil
 ├── css/
 │   └── style.css                  # Feuille de styles principale
 ├── image/                         # Images et logos
@@ -49,22 +49,6 @@ PortFolio_AEG/
 2. Naviguez jusqu'au dossier projet
 3. Ouvrez le fichier `index.html` dans un navigateur
 
-### Utilisation locale
-Pour une meilleure expérience, servez les fichiers via un serveur local :
-
-```bash
-# Avec Python 3
-python -m http.server 8000
-
-# Avec Node.js
-npx http-server
-
-# Avec PHP
-php -S localhost:8000
-```
-
-Puis visitez `http://localhost:8000` dans votre navigateur.
-
 ## 🎨 Palette de couleurs
 
 | Couleur | Code | Usage |
@@ -79,7 +63,6 @@ Puis visitez `http://localhost:8000` dans votre navigateur.
 - **HTML5** : Structure sémantique
 - **CSS3** : Mise en page responsive, animations avancées
 - **JavaScript** : Interactivité (curseur personnalisé)
-- **Glassmorphism** : Effets visuels modernes avec backdrop-filter
 
 ## 📱 Compatibilité navigateur
 
@@ -100,8 +83,6 @@ Le curseur personnalisé offre des interactions visuelles engageantes :
 
 Retrouvez-moi sur les pages suivantes :
 - Page de contact : `contact.html`
-- Voir mes projets : `pageProjets.html`
-- Consulter mon expérience : `pageStages.html`
 
 ## 📝 License
 
@@ -113,6 +94,6 @@ Ce projet est un portfolio personnel. Pour des suggestions ou améliorations, n'
 
 ---
 
-**Créé avec ❤️ par Anthony EMILE-GUILLOT**
+**Créé par Anthony EMILE-GUILLOT**
 
 *Dernier mise à jour : Mars 2026*
