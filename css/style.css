@@ -165,6 +165,17 @@
             box-shadow: 0 10px 40px rgba(16, 185, 129, 0.5);
         }
 
+        .btn-back {
+            background: linear-gradient(135deg, #0000ff 0%, #10b981 100%);
+            color: #ffffff;
+            border: none;
+        }
+
+        .btn-back:hover {
+            background: linear-gradient(135deg, #10b981 0%, #0000ff 100%);
+            box-shadow: 0 10px 40px rgba(16, 185, 129, 0.5);
+        }
+
         /* Cards de projets */
         .projects {
             display: grid;
