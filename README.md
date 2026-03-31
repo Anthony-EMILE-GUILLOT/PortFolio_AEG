@@ -96,4 +96,4 @@ Ce projet est un portfolio personnel. Pour des suggestions ou améliorations, n'
 
 **Créé par Anthony EMILE-GUILLOT**
 
-*Dernier mise à jour : Mars 2026*
+*Dernier mise à jour : 1 Avril 2026*
